@@ -8,6 +8,8 @@ public class Paddle : MonoBehaviour
     [SerializeField] float ScreenWidthUnits = 16f;
     [SerializeField] float yMin = 1f;
     [SerializeField] float yMax = 15f;
+    [SerializeField] float xMin = 1f;
+    [SerializeField] float xMax = 15f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +22,20 @@ public class Paddle : MonoBehaviour
     {
         Vector2 paddlePos = new Vector2(transform.position.x, transform.position.y);
         paddlePos.y = Mathf.Clamp(GetYPos(), yMin, yMax);
+        paddlePos.x = Mathf.Clamp(GetXPos(), xMin, xMax);
         transform.position = paddlePos;
+        Debug.Log(Input.mousePosition);
+        Debug.Log(paddlePos);
+        Debug.Log(Screen.width);
     }
 
     private float GetYPos()
     {
         return (Input.mousePosition.y / Screen.width * ScreenWidthUnits);
+    }
+
+    private float GetXPos()
+    {
+        return (Input.mousePosition.x / Screen.width * ScreenWidthUnits);
     }
 }
