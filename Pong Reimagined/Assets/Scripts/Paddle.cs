@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    internal object trnasform;
-    [SerializeField] float ScreenWidthUnits = 16f;
-    [SerializeField] float yMin = 1f;
-    [SerializeField] float yMax = 15f;
-    [SerializeField] float xMin = 1f;
-    [SerializeField] float xMax = 15f;
+    [SerializeField] float yMin = -10f;
+    [SerializeField] float yMax = 10f;
+    [SerializeField] float xMin = -21.5f;
+    [SerializeField] float xMax = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

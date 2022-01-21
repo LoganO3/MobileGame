@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    Pause pause;
+    public void Start()
+    {
+        pause = FindObjectOfType<Pause>();
+    }
+
     [SerializeField] float delayInSeconds = 1f;
     public void LoadNextScene()
     {
@@ -13,13 +19,22 @@ public class SceneLoader : MonoBehaviour
     }
     public void ResetScene()
     {
+        pause.removePauseMenu();
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(CurrentSceneIndex);
+    }
+    public void CompleteResetScene()
+    {
+        pause.removePauseMenu();
+        FindObjectOfType<GameLogic>().Reset();
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(CurrentSceneIndex);
     }
     public void LoadStartScene()
     {
+        pause.removePauseMenu();
+        FindObjectOfType<GameLogic>().Reset();
         SceneManager.LoadScene(0);
-        //FindObjectOfType<GameStatus>().Reset();
     }
     public void LoadGameOver()
     {
