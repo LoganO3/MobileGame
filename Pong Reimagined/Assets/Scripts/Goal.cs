@@ -14,27 +14,18 @@ public class Goal : MonoBehaviour
        gamelogic = FindObjectOfType<GameLogic>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == 12)
         {
-            Debug.Log("Hit");
             if (isPlayerGoal == true)
             {
                 gamelogic.enemyScore++;
-                Debug.Log("Enemy Scored");
                 sceneLoader.ResetScene();
             }
             else
             {
                 gamelogic.playerScore++;
-                Debug.Log("Player Scored");
                 sceneLoader.ResetScene();
             }
         }

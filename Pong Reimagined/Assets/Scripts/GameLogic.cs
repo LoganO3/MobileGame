@@ -34,8 +34,6 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(playerScore);
-        Debug.Log(enemyScore);
     }
 
     public int getPlayerScore()
@@ -46,4 +44,10 @@ public class GameLogic : MonoBehaviour
     {
         return enemyScore;
     }
+    public void Reset()
+    {
+        playerScore = 0;
+        enemyScore = 0;
+    }
 }
+
