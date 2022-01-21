@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 75475166}
   - component: {fileID: 75475165}
+  - component: {fileID: 75475168}
+  - component: {fileID: 75475167}
   m_Layer: 0
   m_Name: Hockey puc
   m_TagString: Untagged
@@ -205,6 +207,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &75475167
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75475164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: f843b10d91949964eb00516e77bc4635, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.012405476, y: 0.030036949}
+  serializedVersion: 2
+  m_Radius: 0.23984182
+--- !u!50 &75475168
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75475164}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &618829393
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148312515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6879303, y: -9.61, z: 108.35455}
+  m_LocalPosition: {x: -10.18, y: -8.56, z: 108.35455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1733894007}
@@ -586,6 +625,7 @@ GameObject:
   - component: {fileID: 1745289032}
   - component: {fileID: 1745289031}
   - component: {fileID: 1745289030}
+  - component: {fileID: 1745289033}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -675,6 +715,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1745289033
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745289029}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005621456, y: -0.007137572}
+  serializedVersion: 2
+  m_Radius: 0.3134594
 --- !u!1 &1762421837
 GameObject:
   m_ObjectHideFlags: 0
