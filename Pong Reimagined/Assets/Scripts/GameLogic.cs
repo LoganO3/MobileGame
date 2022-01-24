@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour
 {
+    SceneLoader sceneLoader;
     public int playerScore;
     public int enemyScore;
 
@@ -15,7 +16,7 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sceneLoader = FindObjectOfType<SceneLoader>(); 
     }
 
     private void SetUpSingleton()
@@ -34,6 +35,14 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerScore >= 7) 
+        {
+            sceneLoader.LoadGameOver();
+        }
+        if (enemyScore >= 7)
+        {
+            sceneLoader.LoadGameOver();
+        }
     }
 
     public int getPlayerScore()

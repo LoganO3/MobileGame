@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    int sceneNumber;
     Pause pause;
     public void Start()
     {
@@ -16,6 +17,11 @@ public class SceneLoader : MonoBehaviour
     {
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(CurrentSceneIndex + 1);
+    }
+    public void LoadSpecificScene()
+    {
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneNumber);
     }
     public void ResetScene()
     {
