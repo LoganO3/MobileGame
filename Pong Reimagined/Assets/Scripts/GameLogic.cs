@@ -7,6 +7,9 @@ public class GameLogic : MonoBehaviour
     SceneLoader sceneLoader;
     public int playerScore;
     public int enemyScore;
+    public bool difficultyIsEasy;
+    public bool difficultyIsMedium;
+    public bool difficultyIsHard;
 
     private void Awake()
     {

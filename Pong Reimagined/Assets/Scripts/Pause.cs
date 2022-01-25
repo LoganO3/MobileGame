@@ -38,5 +38,6 @@ public class Pause : MonoBehaviour
     public void removePauseMenu()
     {
         pauseCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
 }
