@@ -17,17 +17,17 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rB = GetComponent<Rigidbody2D>();
-        gameLogic = FindObjectOfType<GameLogic>();
         puck = FindObjectOfType<Puck>();
     }
 
     // Update is called once per frame
     void Update()
     {
-    Vector3 puckLocation = puck.CurrentLocation();
-    puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
-    puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
-    Move(puckLocation, moveSpeed);
+        CheckDifficulty();
+        Vector3 puckLocation = puck.CurrentLocation();
+        puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
+        puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
+        Move(puckLocation, moveSpeed);
     }
 
     private void Move(Vector3 target, float movementSpeed)
@@ -37,17 +37,18 @@ public class Enemy : MonoBehaviour
 
     private void CheckDifficulty()
     {
+        gameLogic = FindObjectOfType<GameLogic>();
         if (gameLogic.difficultyIsEasy == true)
         {
             moveSpeed = 5f;
         }
         else if (gameLogic.difficultyIsMedium == true)
         {
-            moveSpeed = 10f;
+            moveSpeed = 15f;
         }
         else if (gameLogic.difficultyIsHard == true)
         {
-            moveSpeed = 15f;
+            moveSpeed = 25f;
         }
         else { return; }
     }

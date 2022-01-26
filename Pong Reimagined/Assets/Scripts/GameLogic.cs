@@ -7,9 +7,9 @@ public class GameLogic : MonoBehaviour
     SceneLoader sceneLoader;
     public int playerScore;
     public int enemyScore;
-    public bool difficultyIsEasy;
-    public bool difficultyIsMedium;
-    public bool difficultyIsHard;
+    public bool difficultyIsEasy = false;
+    public bool difficultyIsMedium = false;
+    public bool difficultyIsHard = false;
 
     private void Awake()
     {
@@ -60,6 +60,18 @@ public class GameLogic : MonoBehaviour
     {
         playerScore = 0;
         enemyScore = 0;
+    }
+    public void SetDifficultyEasy()
+    {
+        difficultyIsEasy = true;
+    }
+    public void SetDifficultyMedium()
+    {
+        difficultyIsMedium = true;
+    }
+    public void SetDifficultyHard()
+    {
+        difficultyIsHard = true;
     }
 }
 

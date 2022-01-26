@@ -7,11 +7,17 @@ public class PuckCollider : MonoBehaviour
     [SerializeField] float newVelocity = 2f;
     [SerializeField] bool isVertical;
     Puck puck;
+    GameLogic gameLogic;
 
     // Start is called before the first frame update
     void Start()
     {
         puck = FindObjectOfType<Puck>();
+    }
+
+    void Update()
+    {
+        CheckDifficulty();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -41,5 +47,23 @@ public class PuckCollider : MonoBehaviour
             }
             else { puck.returnRigidbody().velocity = new Vector3(puck.returnRigidbody().velocity.x, puck.returnRigidbody().velocity.y, 0); }
         }
+    }
+
+    private void CheckDifficulty()
+    {
+        gameLogic = FindObjectOfType<GameLogic>();
+        if (gameLogic.difficultyIsEasy == true)
+        {
+            newVelocity = 10f;
+        }
+        else if (gameLogic.difficultyIsMedium == true)
+        {
+            newVelocity = 15f;
+        }
+        else if (gameLogic.difficultyIsHard == true)
+        {
+            newVelocity = 20f;
+        }
+        else { return; }
     }
 }
