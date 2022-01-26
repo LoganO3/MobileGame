@@ -26,22 +26,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rB.velocity = new Vector3(xVelocity, 0, 0);
-        GravitySwitch();
+    rB.velocity = new Vector3(xVelocity, yVelocity, 0);
+    Vector3 puckLocation = puck.CurrentLocation();
+    puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
+    puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
+    Move(puckLocation, moveSpeed);
     }
 
-    private void GravitySwitch()
+    private void Move(Vector3 target, float movementSpeed)
     {
-        Vector3 puckLocation = puck.CurrentLocation();
-        if (puckLocation.y >= transform.position.y)
-        {
-            rB.velocity = new Vector3(xVelocity, yVelocity, 0);
-        }
-        else if (puckLocation.y <= transform.position.y)
-        {
-            rB.velocity = new Vector3(xVelocity, -yVelocity, 0);
-        }
-        else { return; }
+        transform.position += (target - transform.position).normalized * movementSpeed * Time.deltaTime;
     }
 
     private void CheckDifficulty()
@@ -65,27 +59,3 @@ public class Enemy : MonoBehaviour
         else { return; }
     }
 }
-//[SerializeField] float yMin = -8f;
-//[SerializeField] float yMax = 8f;
-//[SerializeField] float xMin = 1.3f;
-//[SerializeField] float xMax = 18.5f;
-//[SerializeField] float moveSpeed = 2f;
-//[SerializeField] float xVelocity = 10f;
-//[SerializeField] float yVelocity = 10f;
-
-// Update is called once per frame
-//void Update()
-//{
-//rB.velocity = new Vector3(xVelocity, yVelocity, 0);
-// Vector3 puckLocation = puck.CurrentLocation();
-//puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
-//puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
-//Move(puckLocation, moveSpeed);
-//GravitySwitch();
-//Debug.Log(puckLocation);
-//}
-
-//private void Move(Vector3 target, float movementSpeed)
-//{
-//  transform.position += (target - transform.position).normalized * movementSpeed * Time.deltaTime;
-//}
