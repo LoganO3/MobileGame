@@ -9,8 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] float xMin = 1.3f;
     [SerializeField] float xMax = 18.5f;
     [SerializeField] float moveSpeed = 2f;
-    [SerializeField] float xVelocity = 10f;
-    [SerializeField] float yVelocity = 10f;
     Rigidbody2D rB;
     GameLogic gameLogic;
     Puck puck;
@@ -26,7 +24,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    rB.velocity = new Vector3(xVelocity, yVelocity, 0);
     Vector3 puckLocation = puck.CurrentLocation();
     puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
     puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
@@ -42,18 +39,14 @@ public class Enemy : MonoBehaviour
     {
         if (gameLogic.difficultyIsEasy == true)
         {
-            xVelocity = 10f;
             moveSpeed = 5f;
-
         }
         else if (gameLogic.difficultyIsMedium == true)
         {
-            xVelocity = 25f;
             moveSpeed = 10f;
         }
         else if (gameLogic.difficultyIsHard == true)
         {
-            xVelocity = 50f;
             moveSpeed = 15f;
         }
         else { return; }

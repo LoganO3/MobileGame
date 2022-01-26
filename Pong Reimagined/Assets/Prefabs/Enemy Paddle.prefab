@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9010027961847723671}
   - component: {fileID: 9010027961847723669}
   - component: {fileID: 9010027961847723672}
-  - component: {fileID: 2541590950814139733}
-  m_Layer: 10
+  - component: {fileID: 5129211855255023170}
+  m_Layer: 11
   m_Name: Enemy Paddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d6350263a5ba83a47921e45ce1744899, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4b90274d243d5548ad8f3bc5e9c56e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.34
---- !u!114 &2541590950814139733
+--- !u!114 &5129211855255023170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,12 +131,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9010027961847723674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c91f82a80c6c70444aac7b65ce433e9b, type: 3}
+  m_Script: {fileID: 11500000, guid: c20e6a13cf24f3c4baad0d3a68a2fc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yMin: -8
-  yMax: 8
-  xMin: -18.5
-  xMax: -1.3
-  xVelocity: 10
-  yVelocity: 10
+  yMin: -14.2
+  yMax: 13.2
+  xMin: 1
+  xMax: 21.2
+  moveSpeed: 10
