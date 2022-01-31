@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    int sceneNumber;
+    [SerializeField] int sceneNumber;
     Pause pause;
+
     public void Start()
     {
         pause = FindObjectOfType<Pause>();
