@@ -24,20 +24,16 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
-        if (pauseCanvas == true)
+        if (Time.timeScale == 1)
         {
-            if (Time.timeScale == 1)
-            {
-                Time.timeScale = 0;
-                pauseCanvas.SetActive(true);
-            }
-            else if (Time.timeScale == 0)
-            {
-                Time.timeScale = 1;
-                pauseCanvas.SetActive(false);
-            }
+            Time.timeScale = 0;
+            pauseCanvas.SetActive(true);
         }
-        else { return; }
+        else if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            pauseCanvas.SetActive(false);
+        }
     }
     public void removePauseMenu()
     {
