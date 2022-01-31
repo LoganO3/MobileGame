@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91f82a80c6c70444aac7b65ce433e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yMin: -14.2
-  yMax: 13.2
-  xMin: -22.2
-  xMax: -2
+  yMin: -30
+  yMax: 0
+  xMin: -21.5
+  xMax: 21.5
