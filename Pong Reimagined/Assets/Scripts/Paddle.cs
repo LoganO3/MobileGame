@@ -26,3 +26,4 @@ public class Paddle : MonoBehaviour
         transform.position = paddlePos;
     }
 }
+

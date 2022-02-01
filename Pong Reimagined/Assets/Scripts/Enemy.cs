@@ -10,20 +10,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] float xMax = 18.5f;
     [SerializeField] float moveSpeed = 2f;
     Rigidbody2D rB;
-    GameLogic gameLogic;
     Puck puck;
+    GameLogic gameLogic;
 
     // Start is called before the first frame update
     void Start()
     {
         rB = GetComponent<Rigidbody2D>();
         puck = FindObjectOfType<Puck>();
+        gameLogic = FindObjectOfType<GameLogic>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckDifficulty();
         Vector3 puckLocation = puck.CurrentLocation();
         puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
         puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         transform.position += (target - transform.position).normalized * movementSpeed * Time.deltaTime;
     }
 
-    private void CheckDifficulty()
+private void CheckDifficulty()
     {
         gameLogic = FindObjectOfType<GameLogic>();
         if (gameLogic.difficultyIsEasy == true)

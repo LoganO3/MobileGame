@@ -4,50 +4,33 @@ using UnityEngine;
 
 public class PuckColliders : MonoBehaviour
 {
-    Puck puck;
-    GameLogic gameLogic;
-    float newVelocity = 0f;
+    [SerializeField] bool topCollider;
+    [SerializeField] bool bottomCollider;
+    [SerializeField] bool rightCollider;
     [SerializeField] bool leftCollider;
+    Puck puck;
 
-    void Start()
+    private void Start()
     {
         puck = FindObjectOfType<Puck>();
-        gameLogic = FindObjectOfType<GameLogic>();
     }
-
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        CheckDifficulty();
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
+        if (topCollider == true)
+        {
+            puck.topCollision = true;
+        }
+        if (bottomCollider == true)
+        {
+            puck.bottomCollision = true;
+        }
+        if (rightCollider == true)
+        {
+            puck.rightCollision = true;
+        }
         if (leftCollider == true)
         {
-            puck.rB.velocity = new Vector3(newVelocity, 0, 0);
+            puck.leftCollision = true;
         }
-        else if (leftCollider == false)
-        {
-            puck.rB.velocity = new Vector3(-newVelocity, 0, 0);
-        }
-        else { return; }
-    }
-
-    private void CheckDifficulty()
-    {
-        gameLogic = FindObjectOfType<GameLogic>();
-        if (gameLogic.difficultyIsEasy == true)
-        {
-            newVelocity = 10f;
-        }
-        else if (gameLogic.difficultyIsMedium == true)
-        {
-            newVelocity = 15f;
-        }
-        else if (gameLogic.difficultyIsHard == true)
-        {
-            newVelocity = 20f;
-        }
-        else { return; }
     }
 }
