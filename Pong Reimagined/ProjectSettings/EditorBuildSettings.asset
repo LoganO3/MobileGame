@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Logan Test Scene.unity
     guid: 280a01dc4a3c61e469a8cf23a47b07fc
   - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: b69a2b3c78f01bb4aa8a81d84c959523
+  - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 491d87ef3fd56f44b8f6529971430a3f
   m_configObjects: {}
