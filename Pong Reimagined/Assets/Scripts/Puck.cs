@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Puck : MonoBehaviour
 {
-    public bool topCollision;
-    public bool bottomCollision;
-    public bool leftCollision;
-    public bool rightCollision;
+    public bool topCollision = false;
+    public bool bottomCollision = false;
+    public bool leftCollision = false;
+    public bool rightCollision = false;
     float velocityIncrease = 10f;
     float maxVelocity = 1;
     Rigidbody2D rB;
@@ -22,32 +22,42 @@ public class Puck : MonoBehaviour
 private void Update()
 {
         CheckDifficulty();
+        CheckMaxVelocity();
+}
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         if (topCollision == true)
         {
             rB.velocity = new Vector3(rB.velocity.x, rB.velocity.y - velocityIncrease, 0);
+            topCollision = false;
+            Debug.Log("Top");
         }
         else { return; }
         if (bottomCollision == true)
         {
             rB.velocity = new Vector3(rB.velocity.x, rB.velocity.y + velocityIncrease, 0);
+            bottomCollision = false;
+            Debug.Log("Bottom");
         }
         else { return; }
         if (leftCollision == true)
         {
             rB.velocity = new Vector3(rB.velocity.x - velocityIncrease, rB.velocity.y, 0);
+            leftCollision = false;
+            Debug.Log("Left");
         }
         else { return; }
         if (rightCollision == true)
         {
             rB.velocity = new Vector3(rB.velocity.x + velocityIncrease, rB.velocity.y, 0);
+            rightCollision = false;
+            Debug.Log("Right");
         }
         else { return; }
-
-        CheckMaxVelocity();
     }
 
-private void CheckDifficulty()
+    private void CheckDifficulty()
 {
     gameLogic = FindObjectOfType<GameLogic>();
     if (gameLogic.difficultyIsEasy == true)

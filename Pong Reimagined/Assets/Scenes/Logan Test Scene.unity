@@ -2134,6 +2134,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1132293551, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132293551, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168187579, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168187579, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168187579, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.13199997
+      objectReference: {fileID: 0}
     - target: {fileID: 6539608005275141923, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2260,22 +2280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5129211855255023170, guid: 7c144f6792aef164da5a079625418e06, type: 3}
-      propertyPath: xMax
-      value: 21.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5129211855255023170, guid: 7c144f6792aef164da5a079625418e06, type: 3}
-      propertyPath: xMin
-      value: -21.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5129211855255023170, guid: 7c144f6792aef164da5a079625418e06, type: 3}
-      propertyPath: yMax
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5129211855255023170, guid: 7c144f6792aef164da5a079625418e06, type: 3}
-      propertyPath: yMin
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9010027961847723670, guid: 7c144f6792aef164da5a079625418e06, type: 3}
       propertyPath: m_RootOrder
       value: 7
