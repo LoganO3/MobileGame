@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rB;
     Puck puck;
     GameLogic gameLogic;
+    float acceleration = 1000f;
+    public Vector2 totalForceY;
+    public Vector2 totalForceX;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,26 @@ public class Enemy : MonoBehaviour
     private void Move(Vector3 target, float movementSpeed)
     {
         transform.position += (target - transform.position).normalized * movementSpeed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (transform.position.y < collision.transform.position.y)
+        {
+            collision.otherRigidbody.AddForce(totalForceY);
+        }
+        else if (transform.position.y > collision.transform.position.y)
+        {
+            collision.otherRigidbody.AddForce(-totalForceY);
+        }
+        if (transform.position.x < collision.transform.position.x)
+        {
+            collision.otherRigidbody.AddForce(totalForceX);
+        }
+        else if (transform.position.x > collision.transform.position.x)
+        {
+            collision.otherRigidbody.AddForce(-totalForceX);
+        }
     }
 
 private void CheckDifficulty()

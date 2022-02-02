@@ -8,12 +8,16 @@ public class Paddle : MonoBehaviour
     [SerializeField] float yMax = 8f;
     [SerializeField] float xMin = -18.5f;
     [SerializeField] float xMax = -1.3f;
-    Rigidbody2D rB;
+
+    public float acceleration = 10000f;
+    public Vector2 totalForceY;
+    public Vector2 totalForceX;
 
     // Start is called before the first frame update
     void Start()
     {
-        rB = GetComponent<Rigidbody2D>();
+        totalForceY = new Vector2(0, acceleration);
+        totalForceX = new Vector2(acceleration, 0);
     }
 
     // Update is called once per frame
@@ -25,5 +29,26 @@ public class Paddle : MonoBehaviour
         paddlePos.x = Mathf.Clamp(mousePostion.x, xMin, xMax);
         transform.position = paddlePos;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (transform.position.y < collision.transform.position.y)
+        {
+            collision.otherRigidbody.AddForce(totalForceY);
+        }
+        else if (transform.position.y > collision.transform.position.y)
+        {
+            collision.otherRigidbody.AddForce(-totalForceY);
+        }
+        if (transform.position.x < collision.transform.position.x)
+        {
+            collision.otherRigidbody.AddForce(totalForceX);
+        }
+        else if (transform.position.x > collision.transform.position.x)
+        {
+            collision.otherRigidbody.AddForce(-totalForceX);
+        }
+    }
 }
+
 
