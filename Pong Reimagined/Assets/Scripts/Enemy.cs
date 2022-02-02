@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rB;
     Puck puck;
     GameLogic gameLogic;
-    float acceleration = 1000f;
+    float acceleration = 10000f;
     public Vector2 totalForceY;
     public Vector2 totalForceX;
 
