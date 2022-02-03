@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2285084593404966510}
   - component: {fileID: 2285084593404966511}
-  - component: {fileID: 2285084593404966497}
   - component: {fileID: 2285084593404966496}
   m_Layer: 0
   m_Name: Game Logic
@@ -50,19 +49,6 @@ MonoBehaviour:
   difficultyIsEasy: 0
   difficultyIsMedium: 0
   difficultyIsHard: 1
---- !u!114 &2285084593404966497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2285084593404966508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01477d0d47763d4a9d1192b646b0786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayInSeconds: 1
 --- !u!114 &2285084593404966496
 MonoBehaviour:
   m_ObjectHideFlags: 0
