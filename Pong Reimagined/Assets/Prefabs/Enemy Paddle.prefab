@@ -113,13 +113,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20e6a13cf24f3c4baad0d3a68a2fc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yMin: 0
+  yMin: 1.5
   yMax: 30
   xMin: -21.5
   xMax: 21.5
   moveSpeed: 10
-  totalForceY: {x: 0, y: 0}
-  totalForceX: {x: 0, y: 0}
+  abilityIsSizeChange: 0
+  abilityIsSpeedChange: 1
+  abilityIsIncreasedPuckForce: 0
 --- !u!50 &2932755032834039392
 Rigidbody2D:
   serializedVersion: 4
@@ -140,4 +141,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

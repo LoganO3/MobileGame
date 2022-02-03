@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Puck : MonoBehaviour
 {
-    float maxVelocity = 1;
-    Rigidbody2D rB;
+    public float maxVelocity = 1;
+    public float difficultyMaxVelocity;
+    public Rigidbody2D rB;
     GameLogic gameLogic;
 
     private void Start()
     {
         rB = GetComponent<Rigidbody2D>();
         gameLogic = GetComponent<GameLogic>();
+        CheckDifficulty();
     }
 
 private void Update()
 {
-        CheckDifficulty();
         CheckMaxVelocity();
 }
 
@@ -31,16 +32,19 @@ private void Update()
     gameLogic = FindObjectOfType<GameLogic>();
     if (gameLogic.difficultyIsEasy == true)
     {
-            maxVelocity = 50f;
-    }
+            difficultyMaxVelocity = 50f;
+            maxVelocity = difficultyMaxVelocity;
+        }
     else if (gameLogic.difficultyIsMedium == true)
     {
-            maxVelocity = 75f; 
-    }
+            difficultyMaxVelocity = 65f;
+            maxVelocity = difficultyMaxVelocity;
+        }
     else if (gameLogic.difficultyIsHard == true)
     {
-            maxVelocity = 100f; 
-    }
+            difficultyMaxVelocity = 80f;
+            maxVelocity = difficultyMaxVelocity;
+        }
     else { return; }
 }
 

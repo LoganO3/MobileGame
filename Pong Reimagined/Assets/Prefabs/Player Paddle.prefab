@@ -114,9 +114,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yMin: -30
-  yMax: 0
+  yMax: -1.5
   xMin: -21.5
   xMax: 21.5
+  acceleration: 20000
   totalForceY: {x: 0, y: 0}
   totalForceX: {x: 0, y: 0}
 --- !u!50 &1207715712460015377
@@ -139,4 +140,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
