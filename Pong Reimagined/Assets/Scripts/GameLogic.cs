@@ -41,10 +41,12 @@ public class GameLogic : MonoBehaviour
         if (playerScore >= 7) 
         {
             sceneLoader.LoadGameOver();
+            Reset();
         }
         if (enemyScore >= 7)
         {
             sceneLoader.LoadGameOver();
+            Reset();
         }
     }
 
@@ -64,13 +66,19 @@ public class GameLogic : MonoBehaviour
     public void SetDifficultyEasy()
     {
         difficultyIsEasy = true;
+        difficultyIsMedium = false;
+        difficultyIsHard = false;
     }
     public void SetDifficultyMedium()
     {
+        difficultyIsEasy = false;
         difficultyIsMedium = true;
+        difficultyIsHard = false;
     }
     public void SetDifficultyHard()
     {
+        difficultyIsEasy = false;
+        difficultyIsMedium = false;
         difficultyIsHard = true;
     }
 }

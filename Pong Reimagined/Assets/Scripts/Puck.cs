@@ -37,12 +37,12 @@ private void Update()
         }
     else if (gameLogic.difficultyIsMedium == true)
     {
-            difficultyMaxVelocity = 65f;
+            difficultyMaxVelocity = 60f;
             maxVelocity = difficultyMaxVelocity;
         }
     else if (gameLogic.difficultyIsHard == true)
     {
-            difficultyMaxVelocity = 80f;
+            difficultyMaxVelocity = 70f;
             maxVelocity = difficultyMaxVelocity;
         }
     else { return; }

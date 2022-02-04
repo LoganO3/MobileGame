@@ -44,16 +44,15 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadGameOver()
     {
-        StartCoroutine(DelayForSeconds());
+        SceneManager.LoadScene(3);
+    }
+    public void LoadVictory()
+    {
+        SceneManager.LoadScene(4);
     }
     public void QuitGame()
     {
         Application.Quit();
-    }
-    IEnumerator DelayForSeconds()
-    {
-        yield return new WaitForSeconds(delayInSeconds);
-        SceneManager.LoadScene(2);
     }
 }
 

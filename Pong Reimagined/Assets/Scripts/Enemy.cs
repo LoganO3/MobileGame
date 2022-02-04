@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rB;
     Puck puck;
     GameLogic gameLogic;
+    Vector3 puckLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -30,16 +31,55 @@ public class Enemy : MonoBehaviour
         puck = FindObjectOfType<Puck>();
         gameLogic = FindObjectOfType<GameLogic>();
         CheckDifficulty();
+        Vector3 puckLocation = puck.CurrentLocation();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 puckLocation = puck.CurrentLocation();
-        puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
-        puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
+        puckLocation.y = Mathf.Clamp(transform.position.y, yMin, yMax);
+        puckLocation.x = Mathf.Clamp(transform.position.x, xMin, xMax);
         AbilityTimer();
+        MovementChecksAndConstrants();
         Move(puckLocation, moveSpeed);
+    }
+
+    private void MovementChecksAndConstrants()
+    {
+        if (puck.CurrentLocation().y < -.5)
+        {
+            puckLocation.y = puck.CurrentLocation().y + 31.5f;
+            puckLocation.x = puck.CurrentLocation().x;
+        }
+        else if (transform.position.y > puck.CurrentLocation().y)
+        {
+            if (transform.position.x < puckLocation.x + 1 && transform.position.x > puckLocation.x - 1)
+            {
+                puckLocation.y = puck.CurrentLocation().y;
+                puckLocation.x = puck.CurrentLocation().x;
+            }
+            else
+            {
+                puckLocation.x = puck.CurrentLocation().x;
+            }
+        }
+       else if (transform.position.y <= puck.CurrentLocation().y)
+        {
+            if (transform.position.x == puckLocation.x)
+            {
+                puckLocation.y = puck.CurrentLocation().y;
+            }
+            else if (puck.CurrentLocation().x >= 0)
+            {
+                puckLocation.x = puckLocation.x - 5;
+                puckLocation.y = puckLocation.y + 5;
+            }
+            else
+            {
+                puckLocation.x = puckLocation.x + 5;
+                puckLocation.y = puckLocation.y + 5;
+            }
+        }
     }
 
     private void CheckDifficulty()
@@ -47,17 +87,17 @@ public class Enemy : MonoBehaviour
         gameLogic = FindObjectOfType<GameLogic>();
         if (gameLogic.difficultyIsEasy == true)
         {
-            difficultyMoveSpeed = 5f;
+            difficultyMoveSpeed = 20f;
             moveSpeed = difficultyMoveSpeed;
         }
         else if (gameLogic.difficultyIsMedium == true)
         {
-            difficultyMoveSpeed = 15f;
+            difficultyMoveSpeed = 30f;
             moveSpeed = difficultyMoveSpeed;
         }
         else if (gameLogic.difficultyIsHard == true)
         {
-            difficultyMoveSpeed = 25f;
+            difficultyMoveSpeed = 50f;
             moveSpeed = difficultyMoveSpeed;
         }
         else { return; }
@@ -72,26 +112,21 @@ public class Enemy : MonoBehaviour
     {
         Vector2 totalForceY = new Vector2(0, acceleration);
         Vector2 totalForceX = new Vector2(acceleration, 0);
-        Debug.Log("Touch");
         if (transform.position.y < collision.transform.position.y)
         {
             collision.otherRigidbody.AddForce(totalForceY);
-            Debug.Log("Hit Up");
         }
         else if (transform.position.y > collision.transform.position.y)
         {
             collision.otherRigidbody.AddForce(-totalForceY);
-            Debug.Log("Hit Dowm");
         }
         if (transform.position.x < collision.transform.position.x)
         {
             collision.otherRigidbody.AddForce(totalForceX);
-            Debug.Log("Hit right");
         }
         else if (transform.position.x > collision.transform.position.x)
         {
             collision.otherRigidbody.AddForce(-totalForceX);
-            Debug.Log("Hit left");
         }
     }
 
@@ -152,7 +187,6 @@ public class Enemy : MonoBehaviour
             {
                 if (acceleration == 20000f)
                 {
-                    Debug.Log("Ability");
                     puck.maxVelocity = puck.difficultyMaxVelocity;
                     acceleration = 10000f;
                     timerCurrentCount = timerTarget;
@@ -160,7 +194,6 @@ public class Enemy : MonoBehaviour
                 }
                 else if (acceleration == 10000f)
                 {
-                    Debug.Log("Ability");
                     puck.maxVelocity = 100;
                     acceleration = 20000f;
                     timerCurrentCount = timeWithAbility;
