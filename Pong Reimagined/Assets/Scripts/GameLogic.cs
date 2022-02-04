@@ -40,7 +40,7 @@ public class GameLogic : MonoBehaviour
     {
         if (playerScore >= 7) 
         {
-            sceneLoader.LoadGameOver();
+            sceneLoader.LoadVictory();
             Reset();
         }
         if (enemyScore >= 7)

@@ -7,15 +7,11 @@ public class Goal : MonoBehaviour
     SceneLoader sceneLoader;
     GameLogic gamelogic;
     public bool isPlayerGoal;
-    // Start is called before the first frame update
-    void Start()
-    {
-       sceneLoader = FindObjectOfType<SceneLoader>();
-       gamelogic = FindObjectOfType<GameLogic>();
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+        gamelogic = FindObjectOfType<GameLogic>();
         if (other.gameObject.layer == 12)
         {
             if (isPlayerGoal == true)
