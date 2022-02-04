@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Air Hockey Table 1_7
+  m_Name: Air Hockey Table_11
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 7987323833966575479, guid: 391bf5986100ea44c8bcb4e32fcaef53, type: 3}
+  m_Sprite: {fileID: -3300362821251834452, guid: 72c6ee54e35b2b54fb8c0218ef914ecb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
