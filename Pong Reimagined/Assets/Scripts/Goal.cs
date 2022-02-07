@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    SceneLoader sceneLoader;
+    LogicSceneLoader logicSceneLoader;
     GameLogic gamelogic;
     public bool isPlayerGoal;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        sceneLoader = FindObjectOfType<SceneLoader>();
+        logicSceneLoader = FindObjectOfType<LogicSceneLoader>();
         gamelogic = FindObjectOfType<GameLogic>();
         if (other.gameObject.layer == 12)
         {
             if (isPlayerGoal == true)
             {
                 gamelogic.enemyScore++;
-                sceneLoader.ResetScene();
+                logicSceneLoader.ResetScene();
             }
             else
             {
                 gamelogic.playerScore++;
-                sceneLoader.ResetScene();
+                logicSceneLoader.ResetScene();
             }
         }
         else { return; }

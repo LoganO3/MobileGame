@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2285084593404966510}
   - component: {fileID: 2285084593404966511}
   - component: {fileID: 2285084593404966496}
-  - component: {fileID: 6559224244537031133}
+  - component: {fileID: 3258586260392612120}
   m_Layer: 0
   m_Name: Game Logic
   m_TagString: Untagged
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 0}
---- !u!114 &6559224244537031133
+--- !u!114 &3258586260392612120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2285084593404966508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01477d0d47763d4a9d1192b646b0786, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d8d2bf5b86b2a44aa40561765906fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delayInSeconds: 1
