@@ -38,9 +38,9 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadStartScene()
     {
+        SceneManager.LoadScene(0);
         pause.removePauseMenu();
         FindObjectOfType<GameLogic>().Reset();
-        SceneManager.LoadScene(0);
     }
     public void LoadGameOver()
     {
