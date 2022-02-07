@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2285084593404966510}
   - component: {fileID: 2285084593404966511}
   - component: {fileID: 2285084593404966496}
-  - component: {fileID: 670233132022803353}
+  - component: {fileID: 6559224244537031133}
   m_Layer: 0
   m_Name: Game Logic
   m_TagString: Untagged
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 0}
---- !u!114 &670233132022803353
+--- !u!114 &6559224244537031133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

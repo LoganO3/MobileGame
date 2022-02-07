@@ -6,8 +6,7 @@ public class DifficultySettingScript : MonoBehaviour
 {
     GameLogic gameLogic;
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         gameLogic = FindObjectOfType<GameLogic>();
     }
