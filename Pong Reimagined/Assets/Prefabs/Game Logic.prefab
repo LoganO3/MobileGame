@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: 0
   enemyScore: 0
-  difficultyIsEasy: 0
+  difficultyIsEasy: 1
   difficultyIsMedium: 0
-  difficultyIsHard: 1
+  difficultyIsHard: 0
 --- !u!114 &2285084593404966496
 MonoBehaviour:
   m_ObjectHideFlags: 0

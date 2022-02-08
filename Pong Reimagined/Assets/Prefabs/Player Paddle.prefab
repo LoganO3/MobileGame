@@ -116,8 +116,8 @@ MonoBehaviour:
   yMin: -21.5
   yMax: 21.5
   xMin: -29.5
-  xMax: -2
-  acceleration: 20000
+  xMax: -1
+  acceleration: 100000
   totalForceY: {x: 0, y: 0}
   totalForceX: {x: 0, y: 0}
 --- !u!50 &1207715712460015377
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

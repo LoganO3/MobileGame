@@ -134,10 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20e6a13cf24f3c4baad0d3a68a2fc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yMin: -8
-  yMax: 8
-  xMin: 1.3
-  xMax: 18.5
+  yMin: -21.5
+  yMax: 21.5
+  xMin: 1
+  xMax: 29.5
   moveSpeed: 2
   abilityIsSizeChange: 0
   abilityIsSpeedChange: 0

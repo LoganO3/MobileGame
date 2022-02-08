@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] float yMin = -8f;
+    [SerializeField] float yMax = 8f;
+    [SerializeField] float xMin = -18.5f;
+    [SerializeField] float xMax = -1.3f;
     [SerializeField] float moveSpeed = 2f;
+
     float difficultyMoveSpeed;
     float timerCurrentCount = 5f;
     float timerTarget = 5f;
@@ -33,6 +38,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Vector3 puckLocation = puck.CurrentLocation();
+        puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
+        puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
         AbilityTimer();
         MovementChecksAndConstrants();
         Move(puckLocation, moveSpeed);
@@ -42,7 +49,7 @@ public class Enemy : MonoBehaviour
     {
         if (puck.CurrentLocation().x < -.5)
         {
-            puckLocation.x = puck.CurrentLocation().x + 10f;
+            puckLocation.x = puck.CurrentLocation().x + 20f;
             puckLocation.y = puck.CurrentLocation().y;
         }
         else if (transform.position.x > puck.CurrentLocation().x)
