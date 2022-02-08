@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float yMin = -8f;
-    [SerializeField] float yMax = 8f;
-    [SerializeField] float xMin = 1.3f;
-    [SerializeField] float xMax = 18.5f;
     [SerializeField] float moveSpeed = 2f;
     float difficultyMoveSpeed;
     float timerCurrentCount = 5f;
     float timerTarget = 5f;
     float timeWithAbility = 3f;
-    float acceleration = 10000f;
+    float acceleration = 20000f;
     float combinedSpeed;
     bool timerOver = false;
     [SerializeField] bool abilityIsSizeChange = false;
@@ -31,14 +27,12 @@ public class Enemy : MonoBehaviour
         puck = FindObjectOfType<Puck>();
         gameLogic = FindObjectOfType<GameLogic>();
         CheckDifficulty();
-        Vector3 puckLocation = puck.CurrentLocation();
     }
 
     // Update is called once per frame
     void Update()
     {
-        puckLocation.y = Mathf.Clamp(transform.position.y, yMin, yMax);
-        puckLocation.x = Mathf.Clamp(transform.position.x, xMin, xMax);
+        Vector3 puckLocation = puck.CurrentLocation();
         AbilityTimer();
         MovementChecksAndConstrants();
         Move(puckLocation, moveSpeed);
@@ -48,7 +42,7 @@ public class Enemy : MonoBehaviour
     {
         if (puck.CurrentLocation().x < -.5)
         {
-            puckLocation.x = puck.CurrentLocation().x + 31.5f;
+            puckLocation.x = puck.CurrentLocation().x + 10f;
             puckLocation.y = puck.CurrentLocation().y;
         }
         else if (transform.position.x > puck.CurrentLocation().x)
@@ -63,7 +57,7 @@ public class Enemy : MonoBehaviour
                 puckLocation.y = puck.CurrentLocation().y;
             }
         }
-       else if (transform.position.x <= puck.CurrentLocation().x)
+        else if (transform.position.x <= puck.CurrentLocation().x)
         {
             if (transform.position.y == puckLocation.y)
             {

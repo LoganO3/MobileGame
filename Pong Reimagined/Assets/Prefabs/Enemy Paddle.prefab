@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 9010027961847723670}
   - component: {fileID: 9010027961847723671}
   - component: {fileID: 9010027961847723672}
-  - component: {fileID: 5129211855255023170}
   - component: {fileID: 2932755032834039392}
+  - component: {fileID: 1209015991094925420}
   m_Layer: 11
   m_Name: Enemy Paddle
   m_TagString: Untagged
@@ -100,27 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.34
---- !u!114 &5129211855255023170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9010027961847723674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20e6a13cf24f3c4baad0d3a68a2fc20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yMin: -22.5
-  yMax: 22.5
-  xMin: 2
-  xMax: 30.5
-  moveSpeed: 10
-  abilityIsSizeChange: 0
-  abilityIsSpeedChange: 0
-  abilityIsIncreasedPuckForce: 0
+  m_Radius: 0.36
 --- !u!50 &2932755032834039392
 Rigidbody2D:
   serializedVersion: 4
@@ -142,3 +122,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1209015991094925420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010027961847723674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20e6a13cf24f3c4baad0d3a68a2fc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yMin: -8
+  yMax: 8
+  xMin: 1.3
+  xMax: 18.5
+  moveSpeed: 2
+  abilityIsSizeChange: 0
+  abilityIsSpeedChange: 0
+  abilityIsIncreasedPuckForce: 0

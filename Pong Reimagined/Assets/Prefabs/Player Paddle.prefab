@@ -113,9 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91f82a80c6c70444aac7b65ce433e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yMin: -22.5
-  yMax: 22.5
-  xMin: -30.5
+  yMin: -21.5
+  yMax: 21.5
+  xMin: -29.5
   xMax: -2
   acceleration: 20000
   totalForceY: {x: 0, y: 0}
