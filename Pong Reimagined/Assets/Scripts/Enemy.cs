@@ -46,38 +46,38 @@ public class Enemy : MonoBehaviour
 
     private void MovementChecksAndConstrants()
     {
-        if (puck.CurrentLocation().y < -.5)
+        if (puck.CurrentLocation().x < -.5)
         {
-            puckLocation.y = puck.CurrentLocation().y + 31.5f;
-            puckLocation.x = puck.CurrentLocation().x;
+            puckLocation.x = puck.CurrentLocation().x + 31.5f;
+            puckLocation.y = puck.CurrentLocation().y;
         }
-        else if (transform.position.y > puck.CurrentLocation().y)
+        else if (transform.position.x > puck.CurrentLocation().x)
         {
-            if (transform.position.x < puckLocation.x + 1 && transform.position.x > puckLocation.x - 1)
+            if (transform.position.y < puckLocation.y + 1 && transform.position.y > puckLocation.y - 1)
             {
-                puckLocation.y = puck.CurrentLocation().y;
                 puckLocation.x = puck.CurrentLocation().x;
+                puckLocation.y = puck.CurrentLocation().y;
             }
             else
             {
-                puckLocation.x = puck.CurrentLocation().x;
-            }
-        }
-       else if (transform.position.y <= puck.CurrentLocation().y)
-        {
-            if (transform.position.x == puckLocation.x)
-            {
                 puckLocation.y = puck.CurrentLocation().y;
             }
-            else if (puck.CurrentLocation().x >= 0)
+        }
+       else if (transform.position.x <= puck.CurrentLocation().x)
+        {
+            if (transform.position.y == puckLocation.y)
             {
-                puckLocation.x = puckLocation.x - 5;
-                puckLocation.y = puckLocation.y + 5;
+                puckLocation.x = puck.CurrentLocation().x;
             }
-            else
+            else if (puck.CurrentLocation().y >= 0)
             {
+                puckLocation.y = puckLocation.y - 5;
                 puckLocation.x = puckLocation.x + 5;
+            }
+            else
+            {
                 puckLocation.y = puckLocation.y + 5;
+                puckLocation.x = puckLocation.x + 5;
             }
         }
     }
