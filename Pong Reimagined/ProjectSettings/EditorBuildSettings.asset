@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Game.unity
     guid: f32e6ac73fbf79c4880536ceb3ccec2c
   - enabled: 1
+    path: Assets/Scenes/TutorialPC.unity
+    guid: c61b9be7d4f29474b84d990ae198b3ab
+  - enabled: 1
     path: Assets/Scenes/DifficultySelectScreen.unity
     guid: 3518fee1557353947b7ea9674ccb645b
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 201c63a7f84b0854fb4e92a09729781f
+    path: Assets/Scenes/Logan Test Scene.unity
+    guid: 280a01dc4a3c61e469a8cf23a47b07fc
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: 8cb0a4e2593b7964e97f49f00b0fa9f2

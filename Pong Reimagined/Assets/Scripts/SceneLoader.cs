@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    int sceneNumber;
+    [SerializeField]int sceneNumber;
     Pause pause;
     public void Start()
     {
@@ -17,6 +17,11 @@ public class SceneLoader : MonoBehaviour
     {
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(CurrentSceneIndex + 1);
+    }
+    public void LoadPreviousScene()
+    {
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(CurrentSceneIndex - 1);
     }
     public void LoadSpecificScene()
     {
@@ -44,11 +49,11 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadGameOver()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
     public void LoadVictory()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
     public void QuitGame()
     {

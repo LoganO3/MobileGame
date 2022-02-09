@@ -19,7 +19,11 @@ public class Enemy : MonoBehaviour
     bool timerOver = false;
     [SerializeField] bool abilityIsSizeChange = false;
     [SerializeField] bool abilityIsSpeedChange = false;
+    [SerializeField] bool abilityIsClones = false;
     [SerializeField] bool abilityIsIncreasedPuckForce = false;
+    [SerializeField] GameObject EnemyPaddle;
+    [SerializeField] float cloneNumbers = 0f;
+    [SerializeField] float numberOfTimesAbilitiesRun= 0f;
     Rigidbody2D rB;
     Puck puck;
     GameLogic gameLogic;
@@ -41,13 +45,13 @@ public class Enemy : MonoBehaviour
         puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
         puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
         AbilityTimer();
-        MovementChecksAndConstrants();
         Move(puckLocation, moveSpeed);
+        MovementChecksAndConstrants();
     }
 
     private void MovementChecksAndConstrants()
     {
-        if (puck.CurrentLocation().x < -.5)
+        if (puck.CurrentLocation().x < -2)
         {
             puckLocation.x = puck.CurrentLocation().x + 20f;
             puckLocation.y = puck.CurrentLocation().y;
@@ -57,10 +61,6 @@ public class Enemy : MonoBehaviour
             if (transform.position.y < puckLocation.y + 1 && transform.position.y > puckLocation.y - 1)
             {
                 puckLocation.x = puck.CurrentLocation().x;
-                puckLocation.y = puck.CurrentLocation().y;
-            }
-            else
-            {
                 puckLocation.y = puck.CurrentLocation().y;
             }
         }
@@ -80,6 +80,11 @@ public class Enemy : MonoBehaviour
                 puckLocation.y = puckLocation.y + 5;
                 puckLocation.x = puckLocation.x + 5;
             }
+        }
+        else
+        {
+          puckLocation.y = puck.CurrentLocation().y;
+          puckLocation.x = puck.CurrentLocation().x;
         }
     }
 
@@ -200,6 +205,47 @@ public class Enemy : MonoBehaviour
                     timerCurrentCount = timeWithAbility;
                     timerOver = false;
                 }
+            }
+        }
+        if (abilityIsClones == true)
+        {
+            if (timerCurrentCount <= 0)
+            {
+                timerOver = true;
+            }
+            if (timerOver == true)
+            {
+                if (cloneNumbers == 2f)
+                {
+                    string[] myObjectsNames = new string[] { "clone1", "clone2" };
+                    foreach (string name in myObjectsNames)
+                    {
+                        GameObject ClonesExist = GameObject.Find(name);
+                        if (ClonesExist == true)
+                        {
+                            Destroy(ClonesExist.gameObject);
+                            cloneNumbers = 0;
+                            numberOfTimesAbilitiesRun = 0;
+                        }
+                    }
+                }
+                timerOver = false;
+            }
+            else if (cloneNumbers == 0f)
+            {
+                if (numberOfTimesAbilitiesRun == 0)
+                {
+                    GameObject Clone1 = Instantiate(EnemyPaddle, transform.position, Quaternion.identity) as GameObject;
+                    GameObject Clone2 = Instantiate(EnemyPaddle, transform.position, Quaternion.identity) as GameObject;
+                    numberOfTimesAbilitiesRun++;
+                    cloneNumbers = 2;
+                }
+                else
+                {
+                    return;
+                }
+                    timerCurrentCount = timeWithAbility;
+                    timerOver = false;
             }
         }
     }

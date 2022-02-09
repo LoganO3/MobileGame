@@ -1102,6 +1102,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2072481125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9010027961847723674, guid: 7c144f6792aef164da5a079625418e06, type: 3}
+  m_PrefabInstance: {fileID: 4189635937492768987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2117585840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1318,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1209015991094925420, guid: 7c144f6792aef164da5a079625418e06, type: 3}
+      propertyPath: EnemyPaddle
+      value: 
+      objectReference: {fileID: 2072481125}
+    - target: {fileID: 1209015991094925420, guid: 7c144f6792aef164da5a079625418e06, type: 3}
+      propertyPath: EnemySprite
+      value: 
+      objectReference: {fileID: 2072481125}
+    - target: {fileID: 1209015991094925420, guid: 7c144f6792aef164da5a079625418e06, type: 3}
+      propertyPath: abilityIsClones
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9010027961847723670, guid: 7c144f6792aef164da5a079625418e06, type: 3}
       propertyPath: m_RootOrder
       value: 7
