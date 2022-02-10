@@ -11,6 +11,8 @@ public class LogicSceneLoader : MonoBehaviour
     {
         pause = FindObjectOfType<Pause>();
     }
+
+    [SerializeField] float delayInSeconds = 1f;
     public void LoadNextScene()
     {
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;

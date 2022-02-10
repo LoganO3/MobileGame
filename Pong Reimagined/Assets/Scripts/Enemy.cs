@@ -21,10 +21,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] bool abilityIsSpeedChange = false;
     [SerializeField] bool abilityIsClones = false;
     [SerializeField] bool abilityIsIncreasedPuckForce = false;
-    [SerializeField] bool clonesHaveBeenSpawned = false;
     [SerializeField] GameObject EnemyPaddle;
-    [SerializeField] float numberOfTimesAbilitiesRun = 0f;
-    [SerializeField] float numberDestroyed = 0f;
+    [SerializeField] float cloneNumbers = 0f;
+    [SerializeField] float numberOfTimesAbilitiesRun= 0f;
     Rigidbody2D rB;
     Puck puck;
     GameLogic gameLogic;
@@ -42,12 +41,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        puckLocation = puck.CurrentLocation();
-        AbilityTimer();
-        MovementChecksAndConstrants();
+        Vector3 puckLocation = puck.CurrentLocation();
         puckLocation.y = Mathf.Clamp(puckLocation.y, yMin, yMax);
         puckLocation.x = Mathf.Clamp(puckLocation.x, xMin, xMax);
+        AbilityTimer();
         Move(puckLocation, moveSpeed);
+        MovementChecksAndConstrants();
     }
 
     private void MovementChecksAndConstrants()
@@ -57,7 +56,7 @@ public class Enemy : MonoBehaviour
             puckLocation.x = puck.CurrentLocation().x + 20f;
             puckLocation.y = puck.CurrentLocation().y;
         }
-        else if (transform.position.x > puck.CurrentLocation().x + 2)
+        else if (transform.position.x > puck.CurrentLocation().x)
         {
             if (transform.position.y < puckLocation.y + 1 && transform.position.y > puckLocation.y - 1)
             {
@@ -65,7 +64,7 @@ public class Enemy : MonoBehaviour
                 puckLocation.y = puck.CurrentLocation().y;
             }
         }
-        else if (transform.position.x <= puck.CurrentLocation().x + 2)
+        else if (transform.position.x <= puck.CurrentLocation().x)
         {
             if (transform.position.y == puckLocation.y)
             {
@@ -216,38 +215,37 @@ public class Enemy : MonoBehaviour
             }
             if (timerOver == true)
             {
-                if (numberOfTimesAbilitiesRun > 0)
+                if (cloneNumbers == 2f)
                 {
-                    if (clonesHaveBeenSpawned == true)
+                    string[] myObjectsNames = new string[] { "clone1", "clone2" };
+                    foreach (string name in myObjectsNames)
                     {
-                        if (numberDestroyed <= 1f)
+                        GameObject ClonesExist = GameObject.Find(name);
+                        if (ClonesExist == true)
                         {
-                            GameObject Clone1Check = GameObject.Find("Enemy Paddle(Clone)");
-                            Destroy(Clone1Check.gameObject);
-                            numberDestroyed++;
+                            Destroy(ClonesExist.gameObject);
+                            cloneNumbers = 0;
+                            numberOfTimesAbilitiesRun = 0;
                         }
-                        else
-                        {
-                            clonesHaveBeenSpawned = false;
-                        }
-                    }
-                    else
-                    {
-                        numberOfTimesAbilitiesRun = 0;
-                        timerCurrentCount = timerTarget;
-                        timerOver = false;
                     }
                 }
-                else if (numberOfTimesAbilitiesRun == 0)
+                timerOver = false;
+            }
+            else if (cloneNumbers == 0f)
+            {
+                if (numberOfTimesAbilitiesRun == 0)
                 {
-                    numberDestroyed = 0;
                     GameObject Clone1 = Instantiate(EnemyPaddle, transform.position, Quaternion.identity) as GameObject;
                     GameObject Clone2 = Instantiate(EnemyPaddle, transform.position, Quaternion.identity) as GameObject;
                     numberOfTimesAbilitiesRun++;
-                    clonesHaveBeenSpawned = true;
+                    cloneNumbers = 2;
+                }
+                else
+                {
+                    return;
+                }
                     timerCurrentCount = timeWithAbility;
                     timerOver = false;
-                }
             }
         }
     }
