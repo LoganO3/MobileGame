@@ -254,7 +254,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -28.466356, y: -2.4784143}
@@ -523,6 +523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f406c380f44bb141ae35f78a6559f6c, type: 3}
+--- !u!50 &758963577 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2532137293833154283, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
+  m_PrefabInstance: {fileID: 998729356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &806577706
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +592,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4097741944297903723, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
+      propertyPath: rB
+      value: 
+      objectReference: {fileID: 758963577}
     - target: {fileID: 6539608005275141923, guid: 99f06cf3ff2c65a4b8e6f87a4bdbd9fc, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1286,7 +1295,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -28.466356, y: -2.4784143}
