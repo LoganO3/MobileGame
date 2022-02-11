@@ -10,7 +10,7 @@ public class TimerSingleton : MonoBehaviour
     }
     private void SetUpSingleton()
     {
-        int numberGameStatus = FindObjectsOfType<GameLogic>().Length;
+        int numberGameStatus = FindObjectsOfType<TimerSingleton>().Length;
         if (numberGameStatus > 1)
         {
             Destroy(gameObject);

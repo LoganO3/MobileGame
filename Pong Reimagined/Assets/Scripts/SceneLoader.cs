@@ -16,6 +16,16 @@ public class SceneLoader : MonoBehaviour
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(CurrentSceneIndex + 1);
     }
+    public void LoadSceneTwoAway()
+    {
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(CurrentSceneIndex + 2);
+    }
+    public void LoadSceneThreeAway()
+    {
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(CurrentSceneIndex + 3);
+    }
     public void LoadPreviousScene()
     {
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;

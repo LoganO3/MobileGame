@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 236314783}
   - component: {fileID: 236314782}
   m_Layer: 5
-  m_Name: Select Difficulty Text
+  m_Name: Title Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1162201472}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -436,8 +436,8 @@ RectTransform:
   m_Children:
   - {fileID: 1562009346}
   - {fileID: 860856029}
-  - {fileID: 1370741705}
   - {fileID: 236314781}
+  - {fileID: 1370741705}
   - {fileID: 2116823149}
   - {fileID: 1370385945}
   m_Father: {fileID: 0}
@@ -690,7 +690,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1162201472}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

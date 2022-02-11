@@ -14,12 +14,12 @@ public class ScoreDisplay : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
-        gameLogic = FindObjectOfType<GameLogic>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameLogic = FindObjectOfType<GameLogic>();
         if (isPlayerScore == true)
         {
             scoreText.text = gameLogic.getPlayerScore().ToString();
