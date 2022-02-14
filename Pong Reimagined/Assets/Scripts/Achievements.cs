@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class Achievements : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool hasCompletedEasyTimeTrial = false;
+    public bool hasCompletedIntermeidateTimeTrial = false;
+    public bool hasCompletedHardTimeTrial = false;
+    public bool hasCompletedEasyPointTrial = false;
+    public bool hasCompletedIntermeidatePointTrial = false;
+    public bool hasCompletedHardPointTrial = false;
+    GameObject easyTimeTrial;
+    GameObject intermeidateTimeTrial;
+    GameObject hardTimeTrial;
+    GameObject easypointTrial;
+    GameObject intermediatepointTrial;
+    GameObject hardpointTrial;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (hasCompletedEasyTimeTrial == true)
+        {
+            Destroy(easyTimeTrial);
+        }
+        if (hasCompletedIntermeidateTimeTrial == true)
+        {
+            Destroy(intermeidateTimeTrial);
+        }
+        if (hasCompletedHardTimeTrial == true)
+        {
+            Destroy(hardTimeTrial);
+        }
+        if (hasCompletedEasyPointTrial == true)
+        {
+            Destroy(easypointTrial);
+        }
+        if (hasCompletedIntermeidatePointTrial == true)
+        {
+            Destroy(intermediatepointTrial);
+        }
+        if (hasCompletedHardPointTrial == true)
+        {
+            Destroy(hardpointTrial);
+        }
     }
 }

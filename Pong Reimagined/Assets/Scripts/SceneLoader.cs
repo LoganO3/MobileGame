@@ -7,9 +7,14 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField]int sceneNumber;
     Pause pause;
+    GameLogic gameLogic;
+    Timer timer;
+    Achievements achievements;
     public void Start()
     {
         pause = FindObjectOfType<Pause>();
+        gameLogic = FindObjectOfType<GameLogic>();
+        timer = FindObjectOfType<Timer>();
     }
     public void LoadNextScene()
     {
@@ -45,7 +50,7 @@ public class SceneLoader : MonoBehaviour
     public void CompleteResetScene()
     {
         pause.removePauseMenu();
-        FindObjectOfType<GameLogic>().Reset();
+        gameLogic.Reset();
         int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(CurrentSceneIndex);
     }
@@ -53,15 +58,21 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         pause.removePauseMenu();
-        FindObjectOfType<GameLogic>().Reset();
+        gameLogic.Reset();
     }
     public void LoadGameOver()
     {
+        gameLogic.totalTime = timer.time;
         SceneManager.LoadScene(6);
+        Destroy(timer);
     }
     public void LoadVictory()
     {
+        gameLogic.totalTime = timer.time;
+        gameLogic.WonInTime();
+        gameLogic.DidNotGetScoredOn();
         SceneManager.LoadScene(5);
+        Destroy(timer);
     }
     public void QuitGame()
     {

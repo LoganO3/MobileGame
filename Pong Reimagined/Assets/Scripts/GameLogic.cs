@@ -5,8 +5,11 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     SceneLoader sceneLoader;
+    Achievements achievements;
     public int playerScore;
     public int enemyScore;
+    public float totalTime;
+    public bool wasScoredOn;
     public bool difficultyIsEasy = false;
     public bool difficultyIsMedium = false;
     public bool difficultyIsHard = false;
@@ -19,7 +22,7 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sceneLoader = FindObjectOfType<SceneLoader>(); 
+        sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
     private void SetUpSingleton()
@@ -38,7 +41,7 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerScore >= 7) 
+        if (playerScore >= 7)
         {
             sceneLoader.LoadVictory();
             Reset();
@@ -80,6 +83,46 @@ public class GameLogic : MonoBehaviour
         difficultyIsEasy = false;
         difficultyIsMedium = false;
         difficultyIsHard = true;
+    }
+
+    public void WonInTime()
+    {
+        if (totalTime <= 300 && difficultyIsEasy == true)
+        {
+            achievements.hasCompletedEasyTimeTrial = true;
+        }
+        if (totalTime <= 300 && difficultyIsMedium == true)
+        {
+            achievements.hasCompletedIntermeidateTimeTrial = true;
+        }
+        if (totalTime <= 300 && difficultyIsHard == true)
+        {
+            achievements.hasCompletedHardTimeTrial = true;
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public void DidNotGetScoredOn()
+    {
+        if (playerScore == 0 && difficultyIsEasy == true)
+        {
+            achievements.hasCompletedEasyPointTrial = true;
+        }
+        if (playerScore == 0 && difficultyIsMedium == true)
+        {
+            achievements.hasCompletedIntermeidatePointTrial = true;
+        }
+        if (playerScore == 0 && difficultyIsHard == true)
+        {
+            achievements.hasCompletedHardPointTrial = true;
+        }
+        else
+        {
+            return;
+        }
     }
 }
 
