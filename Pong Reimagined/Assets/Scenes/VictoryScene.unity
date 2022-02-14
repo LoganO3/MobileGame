@@ -262,7 +262,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 180}
-  m_SizeDelta: {x: 1100, y: 120}
+  m_SizeDelta: {x: 1014, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350938472
 MonoBehaviour:
@@ -474,8 +474,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
-  m_SizeDelta: {x: 1101, y: 519}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1014, y: 634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281054573
 MonoBehaviour:
@@ -633,7 +633,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 180}
-  m_SizeDelta: {x: 1100, y: 120}
+  m_SizeDelta: {x: 1014, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492561383
 MonoBehaviour:
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01477d0d47763d4a9d1192b646b0786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayInSeconds: 1
+  sceneNumber: 0
 --- !u!1 &1820632647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7211973587729072771, guid: 22a51677a69ec30419248feaf0183d34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22a51677a69ec30419248feaf0183d34, type: 3}
 --- !u!1 &1855930015 stripped
@@ -1348,4 +1352,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01477d0d47763d4a9d1192b646b0786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayInSeconds: 1
+  sceneNumber: 0
