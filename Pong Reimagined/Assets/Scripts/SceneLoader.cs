@@ -57,11 +57,11 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadGameOver()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
     }
     public void LoadVictory()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
     public void QuitGame()
     {
