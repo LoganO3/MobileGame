@@ -23,6 +23,7 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
+        achievements = FindObjectOfType<Achievements>();
     }
 
     private void SetUpSingleton()
@@ -65,7 +66,8 @@ public class GameLogic : MonoBehaviour
     {
         playerScore = 0;
         enemyScore = 0;
-    }
+        wasScoredOn = false;
+}
     public void SetDifficultyEasy()
     {
         difficultyIsEasy = true;
@@ -87,6 +89,7 @@ public class GameLogic : MonoBehaviour
 
     public void WonInTime()
     {
+        Debug.Log("IsRun");
         if (totalTime <= 300 && difficultyIsEasy == true)
         {
             achievements.hasCompletedEasyTimeTrial = true;
@@ -107,15 +110,15 @@ public class GameLogic : MonoBehaviour
 
     public void DidNotGetScoredOn()
     {
-        if (playerScore == 0 && difficultyIsEasy == true)
+        if (wasScoredOn == false && difficultyIsEasy == true)
         {
             achievements.hasCompletedEasyPointTrial = true;
         }
-        if (playerScore == 0 && difficultyIsMedium == true)
+        if (wasScoredOn == false && difficultyIsMedium == true)
         {
             achievements.hasCompletedIntermeidatePointTrial = true;
         }
-        if (playerScore == 0 && difficultyIsHard == true)
+        if (wasScoredOn == false && difficultyIsHard == true)
         {
             achievements.hasCompletedHardPointTrial = true;
         }

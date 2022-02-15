@@ -13,12 +13,18 @@ public class Achievements : MonoBehaviour
     GameObject easyTimeTrial;
     GameObject intermeidateTimeTrial;
     GameObject hardTimeTrial;
-    GameObject easypointTrial;
-    GameObject intermediatepointTrial;
-    GameObject hardpointTrial;
+    GameObject easyPointTrial;
+    GameObject intermediatePointTrial;
+    GameObject hardPointTrial;
 
     private void Update()
     {
+        GameObject easyTimeTrial = GameObject.Find("Easy Time Marker");
+        GameObject intermediateTimeTrial = GameObject.Find("Intermediate Time Marker ");
+        GameObject hardTimeTrial = GameObject.Find("Hard Time Marker");
+        GameObject easyPointTrial = GameObject.Find("Easy Point Marker ");
+        GameObject intermediatePointTrial = GameObject.Find("Intermediate Point Marker ");
+        GameObject hardPointTrial = GameObject.Find("Hard Point Marker");
         if (hasCompletedEasyTimeTrial == true)
         {
             Destroy(easyTimeTrial);
@@ -33,15 +39,82 @@ public class Achievements : MonoBehaviour
         }
         if (hasCompletedEasyPointTrial == true)
         {
-            Destroy(easypointTrial);
+            Destroy(easyPointTrial);
         }
         if (hasCompletedIntermeidatePointTrial == true)
         {
-            Destroy(intermediatepointTrial);
+            Destroy(intermediatePointTrial);
         }
         if (hasCompletedHardPointTrial == true)
         {
-            Destroy(hardpointTrial);
+            Destroy(hardPointTrial);
+        }
+    }
+
+    public void LoadingIntoAchievement()
+    {
+        GameObject easyTimeTrial = GameObject.Find("Easy Time Marker");
+        GameObject intermediateTimeTrial = GameObject.Find("Intermediate Time Marker ");
+        GameObject hardTimeTrial = GameObject.Find("Hard Time Marker");
+        GameObject easyPointTrial = GameObject.Find("Easy Point Marker ");
+        GameObject intermediatePointTrial = GameObject.Find("Intermediate Point Marker ");
+        GameObject hardPointTrial = GameObject.Find("Hard Point Marker");
+        if (easyTimeTrial)
+        {
+            easyTimeTrial.SetActive(true);
+        }
+        if (intermediateTimeTrial)
+        {
+            intermediateTimeTrial.SetActive(true);
+        }
+        if (hardTimeTrial)
+        {
+            hardTimeTrial.SetActive(true);
+        }
+        if (easyPointTrial)
+        {
+            easyPointTrial.SetActive(true);
+        }
+        if (intermediatePointTrial)
+        {
+            intermediatePointTrial.SetActive(true);
+        }
+        if (hardPointTrial)
+        {
+            hardPointTrial.SetActive(true);
+        }
+    }
+    public void LoadingIntoNonachievementScene()
+    {
+        GameObject easyTimeTrial = GameObject.Find("Easy Time Marker");
+        GameObject intermediateTimeTrial = GameObject.Find("Intermediate Time Marker ");
+        GameObject hardTimeTrial = GameObject.Find("Hard Time Marker");
+        GameObject easyPointTrial = GameObject.Find("Easy Point Marker ");
+        GameObject intermediatePointTrial = GameObject.Find("Intermediate Point Marker ");
+        GameObject hardPointTrial = GameObject.Find("Hard Point Marker");
+        if (easyTimeTrial)
+        {
+            easyTimeTrial.SetActive(false);
+        }
+        if (intermediateTimeTrial)
+        {
+            intermediateTimeTrial.SetActive(false);
+        }
+        if (hardTimeTrial)
+        {
+            hardTimeTrial.SetActive(false);
+        }
+        if (easyPointTrial)
+        {
+            easyPointTrial.SetActive(false);
+        }
+        if (intermediatePointTrial)
+        {
+            intermediatePointTrial.SetActive(false);
+        }
+        if (hardPointTrial)
+        {
+            hardPointTrial.SetActive(false);
         }
     }
 }
