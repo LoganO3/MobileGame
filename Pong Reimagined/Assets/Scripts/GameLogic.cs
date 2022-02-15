@@ -89,7 +89,6 @@ public class GameLogic : MonoBehaviour
 
     public void WonInTime()
     {
-        Debug.Log("IsRun");
         if (totalTime <= 300 && difficultyIsEasy == true)
         {
             achievements.hasCompletedEasyTimeTrial = true;
