@@ -148,16 +148,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236314780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1162201472}
-  m_RootOrder: 2
+  m_Father: {fileID: 860856029}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180}
+  m_AnchoredPosition: {x: 0, y: 8}
   m_SizeDelta: {x: 1014, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236314782
@@ -293,17 +293,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860856028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 236314781}
   m_Father: {fileID: 1162201472}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180}
-  m_SizeDelta: {x: 1014, y: 120}
+  m_AnchoredPosition: {x: 0, y: 238}
+  m_SizeDelta: {x: 1127, y: 158}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860856030
 MonoBehaviour:
@@ -436,8 +437,6 @@ RectTransform:
   m_Children:
   - {fileID: 1562009346}
   - {fileID: 860856029}
-  - {fileID: 236314781}
-  - {fileID: 1370741705}
   - {fileID: 2116823149}
   - {fileID: 1370385945}
   m_Father: {fileID: 0}
@@ -559,11 +558,11 @@ RectTransform:
   m_Children:
   - {fileID: 1340119306}
   m_Father: {fileID: 1162201472}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: -238.44194}
+  m_AnchoredPosition: {x: 470, y: -266}
   m_SizeDelta: {x: 174.6402, y: 95.534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370385946
@@ -685,17 +684,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370741704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1162201472}
-  m_RootOrder: 3
+  m_Father: {fileID: 1562009346}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75.397}
-  m_SizeDelta: {x: 1014, y: 369.21}
+  m_AnchoredPosition: {x: 0, y: -79.0308}
+  m_SizeDelta: {x: 1127, y: 475.9384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370741706
 MonoBehaviour:
@@ -846,7 +845,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1370741705}
   m_Father: {fileID: 1162201472}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -991,12 +991,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1162201472}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75.3969}
-  m_SizeDelta: {x: 1014, y: 369.2102}
+  m_AnchoredPosition: {x: 0.0050318, y: -77.384}
+  m_SizeDelta: {x: 1127, y: 472.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116823150
 MonoBehaviour:
@@ -1018,9 +1018,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Goal of the game:\nThe game is played the first to seven goals. \n\nTo
+  m_text: "Goal of the game:\n\nThe game is played the first to seven goals. \n\nTo
     score hit the back section of your opponets goal outlined by a half circle. \n\nTo
-    win you need to beat all the levels as fast as you can without losing.  \n\nControls:\nIn
+    win you need to beat all the levels as fast as you can without losing.  \n\nControls:\n\nIn
     order to move your puck move your mouse were you wish to move.\n\nTo pause the
     game press the ESC key on your keyboard. "
   m_isRightToLeft: 0
@@ -1049,8 +1049,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29
-  m_fontSizeBase: 29
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
