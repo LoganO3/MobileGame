@@ -1020,9 +1020,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Goal of the game:\n\nThe game is played the first to seven goals. \n\nTo
     score hit the back section of your opponets goal outlined by a half circle. \n\nTo
-    win you need to beat all the levels as fast as you can without losing.  \n\nControls:\n\nIn
-    order to move your puck move your mouse were you wish to move.\n\nTo pause the
-    game press the ESC key on your keyboard. "
+    win you need to beat all the levels without getting scored on seven times in
+    one level.  \n\nControls:\n\nIn order to move you puck you need only drag your
+    finger along the screen where you wish ot move. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
