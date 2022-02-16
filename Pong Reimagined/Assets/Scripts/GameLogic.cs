@@ -61,12 +61,12 @@ public class GameLogic : MonoBehaviour
         {
             if (playerScore >= 7)
             {
-                sceneLoader.LoadVictory();
+                sceneLoader.LoadNextScene();
                 Reset();
             }
             if (enemyScore >= 7)
             {
-                sceneLoader.LoadGameOver();
+                sceneLoader.LoadNextScene();
                 Reset();
             }
         }
