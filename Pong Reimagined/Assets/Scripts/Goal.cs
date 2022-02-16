@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
     LogicSceneLoader logicSceneLoader;
     GameLogic gamelogic;
     public bool isPlayerGoal;
+    public bool isLastLevel;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

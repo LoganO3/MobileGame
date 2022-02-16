@@ -63,7 +63,7 @@ public class SceneLoader : MonoBehaviour
     {
         timer = FindObjectOfType<Timer>();
         gameLogic.totalTime = timer.time;
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(9);
         Destroy(timer);
     }
     public void LoadVictory()
@@ -72,7 +72,7 @@ public class SceneLoader : MonoBehaviour
         gameLogic.totalTime = timer.time;
         gameLogic.DidNotGetScoredOn();
         gameLogic.WonInTime();
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(8);
         Destroy(timer);
     }
     public void Loadachievements()

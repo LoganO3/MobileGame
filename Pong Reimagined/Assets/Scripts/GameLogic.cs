@@ -6,6 +6,7 @@ public class GameLogic : MonoBehaviour
 {
     SceneLoader sceneLoader;
     Achievements achievements;
+    Goal goal;
     public int playerScore;
     public int enemyScore;
     public float totalTime;
@@ -24,6 +25,7 @@ public class GameLogic : MonoBehaviour
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
         achievements = FindObjectOfType<Achievements>();
+        goal = FindObjectOfType<Goal>();
     }
 
     private void SetUpSingleton()
@@ -42,15 +44,31 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerScore >= 7)
+        if (goal.isLastLevel == true)
         {
-            sceneLoader.LoadVictory();
-            Reset();
+            if (playerScore >= 7)
+            {
+                sceneLoader.LoadVictory();
+                Reset();
+            }
+            if (enemyScore >= 7)
+            {
+                sceneLoader.LoadGameOver();
+                Reset();
+            }
         }
-        if (enemyScore >= 7)
+        else
         {
-            sceneLoader.LoadGameOver();
-            Reset();
+            if (playerScore >= 7)
+            {
+                sceneLoader.LoadVictory();
+                Reset();
+            }
+            if (enemyScore >= 7)
+            {
+                sceneLoader.LoadGameOver();
+                Reset();
+            }
         }
     }
 
