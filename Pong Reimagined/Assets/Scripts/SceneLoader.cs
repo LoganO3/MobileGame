@@ -14,7 +14,6 @@ public class SceneLoader : MonoBehaviour
     {
         pause = FindObjectOfType<Pause>();
         gameLogic = FindObjectOfType<GameLogic>();
-        timer = FindObjectOfType<Timer>();
     }
     public void LoadNextScene()
     {
@@ -62,17 +61,23 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadGameOver()
     {
+        timer = FindObjectOfType<Timer>();
         gameLogic.totalTime = timer.time;
         SceneManager.LoadScene(6);
         Destroy(timer);
     }
     public void LoadVictory()
     {
+        timer = FindObjectOfType<Timer>();
         gameLogic.totalTime = timer.time;
-        gameLogic.WonInTime();
         gameLogic.DidNotGetScoredOn();
+        gameLogic.WonInTime();
         SceneManager.LoadScene(5);
         Destroy(timer);
+    }
+    public void Loadachievements()
+    {
+        SceneManager.LoadScene(1);
     }
     public void QuitGame()
     {

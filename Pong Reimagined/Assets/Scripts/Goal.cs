@@ -17,6 +17,7 @@ public class Goal : MonoBehaviour
             if (isPlayerGoal == true)
             {
                 gamelogic.enemyScore++;
+                gamelogic.wasScoredOn = true;
                 logicSceneLoader.ResetScene();
             }
             else

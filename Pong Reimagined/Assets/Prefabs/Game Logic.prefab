@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2285084593404966511}
   - component: {fileID: 2285084593404966496}
   - component: {fileID: 3258586260392612120}
+  - component: {fileID: 5754306228078165058}
   m_Layer: 0
   m_Name: Game Logic
   m_TagString: Untagged
@@ -45,8 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d89b2380f8248439d9ef86e07a5eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: 0
-  enemyScore: 0
+  playerScore: 6
+  enemyScore: 6
+  totalTime: 0
+  wasScoredOn: 0
   difficultyIsEasy: 1
   difficultyIsMedium: 0
   difficultyIsHard: 0
@@ -63,6 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 0}
+  paddle: {fileID: 0}
 --- !u!114 &3258586260392612120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,4 +79,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8d2bf5b86b2a44aa40561765906fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayInSeconds: 1
+--- !u!114 &5754306228078165058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285084593404966508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cc6e764b74d2644877ebb1d8ac36a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
+  hasCompletedEasyTimeTrial: 0
+  hasCompletedIntermeidateTimeTrial: 0
+  hasCompletedHardTimeTrial: 0
+  hasCompletedEasyPointTrial: 0
+  hasCompletedIntermeidatePointTrial: 0
+  hasCompletedHardPointTrial: 0
+  easyTimeTrial: {fileID: 0}
+  intermeidateTimeTrial: {fileID: 0}
+  hardTimeTrial: {fileID: 0}
+  easyPointTrial: {fileID: 0}
+  intermediatePointTrial: {fileID: 0}
+  hardPointTrial: {fileID: 0}
